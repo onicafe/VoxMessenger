@@ -1,6 +1,20 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@core/*": ["./src/core/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@ui/*": ["./src/ui/*"],
+      "@tools/*": ["./src/tools/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.d.ts",
+    "expo-env.d.ts"
+  ]
 }

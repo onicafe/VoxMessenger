@@ -1,8 +1,7 @@
-import { registerRootComponent } from 'expo';
-
-import App from './App';
-
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
-registerRootComponent(App);
+/**
+ * Root Entry Point
+ * Loads polyfills before the app starts.
+ * Required for Supabase + crypto in React Native.
+ */
+import 'react-native-url-polyfill/auto';
+import 'expo-router/entry';

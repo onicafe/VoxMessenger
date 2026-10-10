@@ -1,30 +1,58 @@
 {
   "expo": {
-    "name": "polar-shepard",
-    "slug": "polar-shepard",
-    "version": "1.0.0",
+    "name": "B.L.A.S.T.",
+    "slug": "blast-messenger",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "scheme": "blast",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0a0a0f"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.blast.messenger",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Needed to take photos and videos for messages.",
+        "NSMicrophoneUsageDescription": "Needed to record voice messages.",
+        "NSPhotoLibraryUsageDescription": "Needed to send photos from your library."
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#0a0a0f"
       },
-      "predictiveBackGestureEnabled": false
+      "package": "com.blast.messenger",
+      "permissions": [
+        "CAMERA",
+        "READ_MEDIA_IMAGES",
+        "READ_MEDIA_VIDEO",
+        "RECORD_AUDIO",
+        "VIBRATE"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#7c3aed",
+          "sounds": []
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
